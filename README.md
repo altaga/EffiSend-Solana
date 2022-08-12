@@ -11,9 +11,10 @@ Welcome, this is our project for Solana Summer Camp Hackathon.
 
 ## Application:
 
-#### APK: https://general-bucket-android.s3.amazonaws.com/pending.apk
+#### APK: 
 
-(Because of the size it is in an AWS bucket.)
+Main App : https://github.com/altaga/EffiSend-Solana/blob/main/EffiSend-Solana-APK/app-release.apk
+POS App : https://github.com/altaga/EffiSend-Solana/blob/main/EffiSend-POS-APK/app-release.apk
 
 ## Here is our main demo video: 
 
@@ -56,7 +57,7 @@ System's Architecture:
 
 - Thanks to the Stripe APIs we can manage users, checkout, swap and KYC of our app. (https://stripe.com/docs/api)
 
-App Screens:
+# Main App Screens:
 
   <img src="https://i.ibb.co/fYPNSzZ/Screenshot-20220811-214545.png" width="32%">
   <img src="https://i.ibb.co/hXrkMqc/Screenshot-20220811-214600.png" width="32%">
@@ -69,17 +70,17 @@ App Screens:
    - Click the button and wait.
    - Once the link to verify is ready, clicking the button again will take us to the web page where we must upload our documents.
   
-  <img src="https://i.ibb.co/Xk2C53N/Screenshot-20220811-214729.png" width="32%">
-  <img src="https://i.ibb.co/P6skMgt/Screenshot-20220811-214735.png" width="32%">
-  <img src="https://i.ibb.co/n1tBW2M/Screenshot-20220811-214640.png" width="32%">
+      <img src="https://i.ibb.co/Xk2C53N/Screenshot-20220811-214729.png" width="32%">
+      <img src="https://i.ibb.co/P6skMgt/Screenshot-20220811-214735.png" width="32%">
+      <img src="https://i.ibb.co/n1tBW2M/Screenshot-20220811-214640.png" width="32%">
 
 - Thanks to Solana we can also make transfers directly between Solana Wallets or with Solana Pay.
 
-   - First we must click on the QR code at the top.
+  - First we must click on the QR code at the top.
   
     <img src="https://i.ibb.co/fFXPsbG/image.png" width="32%">
 
-  - We must select if we want to Recieve or Scan/NFC (by default the app opens the Recieve option).
+  - We must select if we want to Recieve or Scan/NFC (by default the app opens the Recieve option). En el caso de esta main app se permite el pago mediante NFC a nuestra POS como parte de la adopcion de esta tecnologia en los pagos tradicionales.
   
     <img src="https://i.ibb.co/vHbY94j/Screenshot-20220811-214942.png" width="32%">
     <img src="https://i.ibb.co/5KFtn8Z/vlcsnap-2022-08-11-21h56m11s720.png" width="32%">
@@ -100,7 +101,7 @@ App Screens:
 
 - At the same time, we can obtain a virtual card from the Stripe API to be able to spend the money from our Fiat account directly.
 
-    <img src="https://i.ibb.co/ScKt0wy/Screenshot-20220811-214820.png" width="32%">
+  <img src="https://i.ibb.co/ScKt0wy/Screenshot-20220811-214820.png" width="32%">
 
 - Above all, we can make a Card Debit deposit from our Fiat account to a any debit cards.
 
@@ -109,11 +110,47 @@ App Screens:
 
 - All transfers made in the demos and during development can be consulted in the explorer.
 
-https://solscan.io/account/4hTMoGhXSjthYhm8kaBidkeNsYPE1N6JYW3g4KePyJjo
+  https://solscan.io/account/4hTMoGhXSjthYhm8kaBidkeNsYPE1N6JYW3g4KePyJjo
 
 - This is a screenshot of our backend in Stripe.
 
   <img src="https://i.ibb.co/LS9vqLK/image.png">
+
+# POS App:
+
+- En el caso del POS la app esta mas enfocada en la recepcion sencilla de pagos y una interfaz enfocada en generar ordenes de pago mediante QR o NFC.
+
+  <img src="https://i.ibb.co/j6kYRWK/Screenshot-2022-08-12-153401.png" width="32%">
+  <img src="https://i.ibb.co/bHxqD2N/Screenshot-2022-08-12-153442.png" width="32%">
+
+- En la POS nos permite ver los balances de Crypto y de Fiat recibidos junto con la lista de transacciones al igual que la Main App.
+
+  <img src="https://i.ibb.co/wQ9jNnW/Screenshot-2022-08-12-153506.png" width="32%">
+  <img src="https://i.ibb.co/wQ9jNnW/Screenshot-2022-08-12-153506.png" width="32%">
+
+- Uno de los procesos mas importantes es el poder realizar pagos en la POS mediante Solana Pay, siendo el pilar de nuestro dispositivo. (En este caso los datos de Label, Message y Memo son campos rellenables, pero en un futuro estos estaran con datos de el establecimiento o persona que recibe el pago)
+
+  <img src="https://i.ibb.co/WfPMrHv/Screenshot-2022-08-12-153540.png" width="32%">
+  <img src="https://i.ibb.co/JjjRrf0/Screenshot-2022-08-12-153552.png" width="32%">
+  <img src="https://i.ibb.co/d0mFvkF/Screenshot-2022-08-12-153632.png" width="32%">
+
+- Al crearse la refrencia por QR esta podra ser pagada mediante cualquier wallet compatible con Solana Pay, sin embargo nuestra Main App permite realizar el pago mediante NFC.
+
+  - Main App / POS App:
+  
+    <img src="https://i.ibb.co/n00nzKz/Screenshot-20220812-153943.png" width="32%"> <img src="https://i.ibb.co/YXn9KRP/Screenshot-2022-08-12-153650.png" width="32%">
+
+- Una vez realizado el pago de la referencia, podremos ver los mensajes de confirmed y verified.
+
+  <img src="https://i.ibb.co/LC18KCg/Screenshot-2022-08-12-154023.png" width="32%"> <img src="https://i.ibb.co/jf4ZMmp/Screenshot-2022-08-12-154216.png" width="32%"> 
+
+- Sobre todo al ser un POS aprvechamos el hecho de tener su impresora de recibos para dar un recibo con la URL donde pueda consultar su transaccion.
+
+  <img src="https://i.ibb.co/1X9NjV3/Screenshot-2022-08-12-154240.png" width="32%"> <img src="https://i.ibb.co/0BY1NTp/Screenshot-2022-08-12-154253.png" width="32%">
+
+- Y para muestra un boton o mas bien una impresion.
+
+<img src="https://i.ibb.co/jbYMg9r/ezgif-com-gif-maker.gif">
 
 # Regarding the planathon feedback, what we did and What's next..
 
