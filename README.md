@@ -150,7 +150,7 @@ System's Architecture:
 
 - Y para muestra un boton o mas bien una impresion.
 
-<img src="https://i.ibb.co/jbYMg9r/ezgif-com-gif-maker.gif">
+<img src="./Images/gifimg.gif">
 
 # Regarding the planathon feedback, what we did and What's next..
 
