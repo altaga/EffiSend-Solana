@@ -192,3 +192,6 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+EffiSend-POS/android/app/debug.keystore
+*.keystore
+*.keystore
