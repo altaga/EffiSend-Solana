@@ -126,7 +126,7 @@ System's Architecture:
 - En la POS nos permite ver los balances de Crypto y de Fiat recibidos junto con la lista de transacciones al igual que la Main App.
 
   <img src="https://i.ibb.co/wQ9jNnW/Screenshot-2022-08-12-153506.png" width="32%">
-  <img src="https://i.ibb.co/wQ9jNnW/Screenshot-2022-08-12-153506.png" width="32%">
+  <img src="https://i.ibb.co/bvJksb5/Screenshot-2022-08-12-153521.png" width="32%">
 
 - Uno de los procesos mas importantes es el poder realizar pagos en la POS mediante Solana Pay, siendo el pilar de nuestro dispositivo. (En este caso los datos de Label, Message y Memo son campos rellenables, pero en un futuro estos estaran con datos de el establecimiento o persona que recibe el pago)
 
