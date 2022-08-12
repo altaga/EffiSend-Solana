@@ -59,9 +59,7 @@ System's Architecture:
 
 # Main App Screens:
 
-  <img src="https://i.ibb.co/fYPNSzZ/Screenshot-20220811-214545.png" width="32%">
-  <img src="https://i.ibb.co/hXrkMqc/Screenshot-20220811-214600.png" width="32%">
-  <img src="https://i.ibb.co/dk1X8yX/Screenshot-20220811-214632.png" width="32%">
+  <img src="https://i.ibb.co/fYPNSzZ/Screenshot-20220811-214545.png" width="32%"> <img src="https://i.ibb.co/hXrkMqc/Screenshot-20220811-214600.png" width="32%"> <img src="https://i.ibb.co/dk1X8yX/Screenshot-20220811-214632.png" width="32%">
 
 - In turn, through Stripe and Solana we can have total control of the movements and transactions of our account in both Crypto and Fiat.
 
@@ -70,9 +68,7 @@ System's Architecture:
    - Click the button and wait.
    - Once the link to verify is ready, clicking the button again will take us to the web page where we must upload our documents.
   
-      <img src="https://i.ibb.co/Xk2C53N/Screenshot-20220811-214729.png" width="32%">
-      <img src="https://i.ibb.co/P6skMgt/Screenshot-20220811-214735.png" width="32%">
-      <img src="https://i.ibb.co/n1tBW2M/Screenshot-20220811-214640.png" width="32%">
+      <img src="https://i.ibb.co/Xk2C53N/Screenshot-20220811-214729.png" width="32%"> <img src="https://i.ibb.co/P6skMgt/Screenshot-20220811-214735.png" width="32%"> <img src="https://i.ibb.co/n1tBW2M/Screenshot-20220811-214640.png" width="32%">
 
 - Thanks to Solana we can also make transfers directly between Solana Wallets or with Solana Pay.
 
