@@ -48,7 +48,7 @@ PENDING
 
 # Solution
 
-Effisend-Solana is a Solana based mobile DApp that improves Payments, Cash Out processes and integrates it with Stripe to improve financial inclusion.
+Effisend-Solana is a Solana based mobile DApp that improves Payments, Cash Out processes and integrates it with Stripe to improve financial inclusion in Mexico and Latin America.
 
 System's Architecture:
 
@@ -71,13 +71,13 @@ System's Architecture:
   
       <img src="https://i.ibb.co/Xk2C53N/Screenshot-20220811-214729.png" width="32%"> <img src="https://i.ibb.co/P6skMgt/Screenshot-20220811-214735.png" width="32%"> <img src="https://i.ibb.co/n1tBW2M/Screenshot-20220811-214640.png" width="32%">
 
-- Thanks to Solana we can also make transfers directly between Solana Wallets or with Solana Pay.
+- Through Solana we can also make transfers directly between Solana Wallets or with Solana Pay.
 
   - First we must click on the QR code at the top.
   
     <img src="https://i.ibb.co/fFXPsbG/image.png" width="32%">
 
-  - We must select if we want to Recieve or Scan/NFC (by default the app opens the Recieve option). En el caso de esta main app se permite el pago mediante NFC a nuestra POS como parte de la adopcion de esta tecnologia en los pagos tradicionales.
+  - We must select if we want to Recieve or Scan/NFC (by default the app opens the Recieve option). In the case of this main app, payment is allowed through NFC to our POS as part of the adoption of this technology in traditional payments.
   
     <img src="https://i.ibb.co/vHbY94j/Screenshot-20220811-214942.png" width="32%">
     <img src="https://i.ibb.co/5KFtn8Z/vlcsnap-2022-08-11-21h56m11s720.png" width="32%">
@@ -88,7 +88,7 @@ System's Architecture:
     <img src="https://i.ibb.co/Bf0XpDc/Screenshot-20220812-023250.png" width="32%">
     <img src="https://i.ibb.co/54vtCdH/Screenshot-20220812-023347.png" width="32%">
 
-  - Transaccion de la imagen: https://solscan.io/tx/5wqWa3r4Ftb7iEW6oikXzdmKzZaR9W2eL1ko2sDNTgckYPGh4ssqAgEV6MxcbPpqbMgKxtCYGWZcXXB11YVn2Ffw
+  - Transaction if you want to check: https://solscan.io/tx/5wqWa3r4Ftb7iEW6oikXzdmKzZaR9W2eL1ko2sDNTgckYPGh4ssqAgEV6MxcbPpqbMgKxtCYGWZcXXB11YVn2Ffw
   
     <img src="https://i.ibb.co/pnP1FHz/Screenshot-20220812-023951.png" width="32%">
 
@@ -100,7 +100,7 @@ System's Architecture:
 
   <img src="https://i.ibb.co/ScKt0wy/Screenshot-20220811-214820.png" width="32%">
 
-- Above all, we can make a Card Debit deposit from our Fiat account to a any debit cards.
+- Additionally, we can make a Card Debit deposit from our Fiat account to a any debit cards.
 
   <img src="https://i.ibb.co/YLdfG1D/Screenshot-20220811-214837.png" width="32%">
   <img src="https://i.ibb.co/P11WRvk/Screenshot-20220811-214859.png" width="32%">
@@ -113,51 +113,49 @@ System's Architecture:
 
   <img src="https://i.ibb.co/LS9vqLK/image.png">
 
-# POS App:
+# Point of Sale application:
 
-- En el caso del POS la app esta mas enfocada en la recepcion sencilla de pagos y una interfaz enfocada en generar ordenes de pago mediante QR o NFC.
+- The Point of Sale application is more focused on the simple reception of payments and an interface focused on generating payment orders through QR or NFC.
 
   <img src="https://i.ibb.co/j6kYRWK/Screenshot-2022-08-12-153401.png" width="32%">
   <img src="https://i.ibb.co/bHxqD2N/Screenshot-2022-08-12-153442.png" width="32%">
 
-- En la POS nos permite ver los balances de Crypto y de Fiat recibidos junto con la lista de transacciones al igual que la Main App.
+- The POS allows us to see the Crypto and Fiat balances received along with the list of transactions just like the Main App.
 
   <img src="https://i.ibb.co/wQ9jNnW/Screenshot-2022-08-12-153506.png" width="32%">
   <img src="https://i.ibb.co/bvJksb5/Screenshot-2022-08-12-153521.png" width="32%">
 
-- Uno de los procesos mas importantes es el poder realizar pagos en la POS mediante Solana Pay, siendo el pilar de nuestro dispositivo. (En este caso los datos de Label, Message y Memo son campos rellenables, pero en un futuro estos estaran con datos de el establecimiento o persona que recibe el pago)
+- One of the most important processes is being able to make payments at the POS through Solana Pay, being this the pillar of our device. (At this point the data at Label, Message and Memo are fillable fields, but in the future these will be with data of the establishment or person receiving the payment)
 
   <img src="https://i.ibb.co/WfPMrHv/Screenshot-2022-08-12-153540.png" width="32%">
   <img src="https://i.ibb.co/JjjRrf0/Screenshot-2022-08-12-153552.png" width="32%">
   <img src="https://i.ibb.co/d0mFvkF/Screenshot-2022-08-12-153632.png" width="32%">
 
-- Al crearse la refrencia por QR esta podra ser pagada mediante cualquier wallet compatible con Solana Pay, sin embargo nuestra Main App permite realizar el pago mediante NFC.
+- When the reference is created by QR, it can be paid through any wallet compatible with Solana Pay, however our Main App also allows payment through NFC.
 
   - Main App / POS App:
   
     <img src="https://i.ibb.co/n00nzKz/Screenshot-20220812-153943.png" width="32%"> <img src="https://i.ibb.co/YXn9KRP/Screenshot-2022-08-12-153650.png" width="32%">
 
-- Una vez realizado el pago de la referencia, podremos ver los mensajes de confirmed y verified.
+- Once the reference payment has been made, we will be able to see the confirmed and verified messages.
 
   <img src="https://i.ibb.co/LC18KCg/Screenshot-2022-08-12-154023.png" width="32%"> <img src="https://i.ibb.co/jf4ZMmp/Screenshot-2022-08-12-154216.png" width="32%"> 
 
-- Sobre todo al ser un POS aprvechamos el hecho de tener su impresora de recibos para dar un recibo con la URL donde pueda consultar su transaccion.
+- In addition, we provide a printed receipt with the URL where you can check your transaction.
 
   <img src="https://i.ibb.co/1X9NjV3/Screenshot-2022-08-12-154240.png" width="32%"> <img src="https://i.ibb.co/0BY1NTp/Screenshot-2022-08-12-154253.png" width="32%">
 
-- Y para muestra un boton o mas bien una impresion.
+- Let's print!
 
 <img src="./Images/gifimg.gif">
 
-# Regarding the planathon feedback, what we did and What's next..
+# Current state and what's next
 
-CAMBIAR
-
-This application is directed at those who cannot benefit directly from cryptocurrency. It has the usual, both crypto and fiat wallets, transfers between crypto and fiat, transfers between crypto accounts and it gives a spin on the cash in - cash out portion of the equation as no other project provides it. It is very important if this application is going to benefit and bank people to be very agile and compatible with FIAT at least until crypto reaches mass market. Most of the developed world has not even incorporated to legacy electronic systems. 
+This application is directed at those who cannot benefit directly from cryptocurrency. It has the usual, both crypto and fiat wallets, transfers between crypto and fiat, transfers between crypto accounts and it gives a spin on the cash in - cash out portion of the equation as no other project provides it. It is very important if this application is going to benefit and bank people to be very agile and compatible with FIAT at least until crypto reaches mass market. Most of the developed world has not even incorporated to legacy electronic systems. In addition to that the incorporation of a Point of Sale thought mainly for SMEs is something that can be key in augmenting the change for further adoption. 
 
 I think we can make the jump from those systems almost directly to self-banking, such as the jump that was made in some parts of Africa and even here in Latin America from skipping telephone landlines directly to Mobile phones. If that jump was made from that type of technology this one can be analogous and possible. 
 
-Perhaps the most important feedback of the Planathon part of our submission was that although this is a brand new market that Neo has no exposure to, we had to show how our application will ensure the enforcement of anti-laundering laws. 
+Perhaps the most important feedback we have obtained is that we have to show how our application will ensure the enforcement of anti-laundering laws. 
 
 We will do that will strong KYC. And at the same time Mexico has published since 2018 strong laws to manage that including its fintech law.
 
@@ -172,11 +170,9 @@ Thus, the need for Decentralized solutions.
 
 Security and identity verification of the clients who use the app is paramount for us, and to thrive in this market we need this to emulate incumbents such as Bitso. We think our technology is mature enough if we compare with these incumbents and much safer. 
 
-Talking about the "promises" we made at the planathon phase, you can see that we have successfully completed them all.
+Regarding the application we would like to test it with real Capital perhaps in Q4 2022.
 
-Regarding the application we would like to test it with real Capital perhaps in Q4 2022, but on the side of features and coding we still need to go mainnet and to activate Rapyd's backend and we are set to go. Rapyd allowed us to create an application very similar to Rappi (https://www.rappi.com) in this sense as it is the same service they use and we have some experience developing on it.
-
-Hopefully you liked the Mobile DApp, to see it in action in the future support it!
+Hopefully you liked the Mobile DApp and Point of Sale.
 
 
 # Team
