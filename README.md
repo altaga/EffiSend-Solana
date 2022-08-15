@@ -48,7 +48,7 @@ PENDING
 
 # Solution
 
-Effisend-Solana is a Solana based mobile DApp that improves Payments, Cash Out processes and integrates it with Stripe to improve financial inclusion in Mexico and Latin America.
+Effisend is a Mobile-First wallet, cash out ramp and Point of Sale Superapp. We combine TradFi through Stripe with Web3 to improve Financial Inclusion in Mexico and LATAM
 
 System's Architecture:
 
