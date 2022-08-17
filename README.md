@@ -1,7 +1,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](pending) [<img src="https://img.shields.io/badge/View-Video-red">](https://www.youtube.com/watch?v=mAlk-tuhS_4)
 
-# EffiSend-Solana
+# EffiSend Solana
 
 <img src="https://i.ibb.co/MnJxYRn/efs.png">
 
