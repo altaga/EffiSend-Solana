@@ -1,5 +1,5 @@
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](pending) [<img src="https://img.shields.io/badge/View-Video-red">](pending)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](pending) [<img src="https://img.shields.io/badge/View-Video-red">](https://www.youtube.com/watch?v=mAlk-tuhS_4)
 
 # EffiSend-Solana
 
@@ -19,7 +19,7 @@ POS App : https://github.com/altaga/EffiSend-Solana/blob/main/EffiSend-POS-APK/a
 
 ## Here is our main demo video: 
 
-[![Demo](https://i.ibb.co/g4W3ypx/image.png)](pending)
+[![Demo](https://i.ibb.co/g4W3ypx/image.png)](https://www.youtube.com/watch?v=mAlk-tuhS_4)
 
 # Introduction and Problem
 
