@@ -198,3 +198,5 @@ https://www.rappi.com
 https://www.rapyd.net/
 
 https://www.pointer.gg/tutorials/solana-pay-irl-payments/944eba7e-82c6-4527-b55c-5411cdf63b23#heads-up:-you're-super-early
+
+https://worldpay.globalpaymentsreport.com/en/market-guides/mexico
