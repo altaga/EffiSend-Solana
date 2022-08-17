@@ -42,9 +42,6 @@ Of course, remembering that the US is the biggest sender of remittances in the w
 
 It is important to mention that, according to the World Bank, 65% of Mexican adults do not have any type of bank account and only 10% save through a financial institution, in addition to the fact that 83% of Mexican adults do not have access to electronic payment systems. These circumstances limit the potential of the sector to place the resources of savers in productive projects that generate economic development and well-being for the population. And crypto is not doing better than the legacy system, most of the users are people like our team, tech savvy with a certain degree of education and already banked.
 
-# Regarding Solana.
-
-PENDING
 
 # Solution
 
