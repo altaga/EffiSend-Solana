@@ -1,6 +1,6 @@
 # EffiSend — Agentic Multichain Payments for High-Traffic Venues
 
-<img src="./images/header.png" style="width: 600px;" />
+<img src="./Images/header.png" style="width: 600px;" />
 
 > A mobile-first crypto wallet and AI concierge that lets anyone receive, swap, bridge, and spend digital assets across 5 blockchains — verified by face, secured by PIN, guided by an AI agent that speaks your language.
 
@@ -16,7 +16,7 @@
 
 Crypto payments at high-traffic real-world venues are broken. You have tokens across multiple chains, no idea which account has enough balance, and no fast way to prove who you are without hardware wallets or browser extensions. The cashier is waiting. The queue is growing. The moment is gone.
 
-<img src="./images/problem.jpg" style="width: 600px;" />
+<img src="./Images/problem.jpg" style="width: 600px;" />
 
 > **EffiSend was built for Tokyo Dome City — but the architecture is designed for any high-traffic, real-world venue where speed, identity, and multichain liquidity intersect.**
 
