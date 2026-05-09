@@ -1,0 +1,34 @@
+if (typeof window !== "undefined") {
+  const ignorePatterns = [
+    "unexpected text node:",
+    "blocked aria-hidden on an element",
+    "usenativedriver` is not supported",
+    "style props are deprecated",
+    "use boxshadow",
+    "expected value to be of type number",
+    "found null instead",
+  ];
+
+  const shouldIgnore = (...args) => {
+    const msg = args.map(String).join(" ").toLowerCase();
+    return ignorePatterns.some((p) => msg.includes(p));
+  };
+
+  const originalError = console.error;
+  console.error = (...args) => {
+    if (shouldIgnore(...args)) return;
+    originalError.apply(console, args);
+  };
+
+  const originalWarn = console.warn;
+  console.warn = (...args) => {
+    if (shouldIgnore(...args)) return;
+    originalWarn.apply(console, args);
+  };
+
+  const originalLog = console.log;
+  console.log = (...args) => {
+    if (shouldIgnore(...args)) return;
+    originalLog.apply(console, args);
+  };
+}
