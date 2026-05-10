@@ -1,4 +1,4 @@
-# EffiSend — Agentic Multichain Payments for High-Traffic Venues
+# EffiSend — Agentic Payments for High-Traffic Venues
 
 <img src="./Images/header.png" style="width: 600px;" />
 
@@ -7,18 +7,17 @@
 **Platform:** Solana Seeker  
 **Channel:** Solana dApp Store  
 **Primary Network:** Solana  
-**Full Multichain:** Solana · Base · Monad · Hedera · Starknet  
-**Stack:** Expo 54 · React Native · `@solana/kit` · Metaplex · Jupiter API · Starknet.js · Ethers.js
+**Stack:** Expo 54 · React Native · `@solana/kit` · Metaplex · Jupiter API · Ethers.js
 
 ---
 
 ## The Problem
 
-Crypto payments at high-traffic real-world venues are broken. You have tokens across multiple chains, no idea which account has enough balance, and no fast way to prove who you are without hardware wallets or browser extensions. The cashier is waiting. The queue is growing. The moment is gone.
+Crypto payments at high-traffic real-world venues are broken. You have tokens, no idea which account has enough balance, and no fast way to prove who you are without hardware wallets or browser extensions. The cashier is waiting. The queue is growing. The moment is gone.
 
 <img src="./Images/problem.jpg" style="width: 600px;" />
 
-> **EffiSend was built for Tokyo Dome City — but the architecture is designed for any high-traffic, real-world venue where speed, identity, and multichain liquidity intersect.**
+> **EffiSend was built for Tokyo Dome City — but the architecture is designed for any high-traffic, real-world venue where speed and identity.**
 
 Football stadiums, concert halls, theme parks, transit hubs — anywhere tens of thousands of people need to transact quickly and trustlessly.
 
@@ -39,7 +38,7 @@ The foundation of EffiSend is a biometric-first, non-custodial wallet that abstr
 graph TD
     User((User)) -->|Face Scan| FaceID[Biometric Identity Layer]
     FaceID -->|On-the-fly| Onboard[Deterministic Wallet Creation]
-    Onboard --> Wallet[Multichain Hub]
+    Onboard --> Wallet[Hub]
     
     Wallet --> SOL[Solana<br/>SOL · USDC · USDT · BONK · JUP]
     Wallet --> EVM[EVM / L2<br/>Base · Monad]
@@ -174,7 +173,7 @@ sequenceDiagram
  sequenceDiagram
     participant M as Merchant Terminal
     participant C as Customer (FaceID)
-    participant W as Multichain Wallet
+    participant W as  Wallet
 
     M->>C: Scan Customer Face
     C->>W: Instant Identity & Balance Resolution
@@ -247,7 +246,7 @@ graph LR
 
 ---
 
-## NFT & Pass Gallery — Multichain Collectibles
+## NFT & Pass Gallery — Collectibles
 
 The gallery aggregates digital assets from three chains into a single categorized view:
 
@@ -270,7 +269,7 @@ Each NFT card displays: chain badge, asset image, collection name, contract addr
 
 ## Unified Liquidity Hub (Tab 4)
 
-EffiSend's main dashboard provides a single source of truth for your multichain net worth, combining real-time pricing with deep liquidity management.
+EffiSend's main dashboard provides a single source of truth for your net worth, combining real-time pricing with deep liquidity management.
 
 *   **Real-time USD Tracking** — Instant valuation of all SOL, SPL, and cross-chain tokens powered by the CoinGecko API.
 *   **Intelligent Balance Polling** — 30-second auto-refresh ensures you always see accurate liquidity before making a payment.
