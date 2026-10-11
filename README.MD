@@ -104,18 +104,112 @@ EffiSend natively manages the following Solana mainnet assets:
 | **JUP** | `JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN` | 6 |
 | **BTC (Wrapped)** | `3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh` | 8 |
 
-### Institutional-Grade Infrastructure
+### Infrastructure
 
-EffiSend is built on the next-generation **@solana/kit** SDK, ensuring high-performance, parallelized token resolution without relying on centralized indexers. 
+EffiSend uses **@solana/kit** and **@solana-program/token** in the app, and **Metaplex** for NFT metadata. Reads never depend on one endpoint:
 
-*   **100% Uptime Architecture** — The system maintains a redundant pool of RPC endpoints with silent, automatic failover. If one node lags, EffiSend switches instantly—the user never sees an error.
-*   **Sub-Second Finality** — Leveraging Solana's speed to ensure that real-world payments at a cashier happen at the speed of tap-to-pay.
+*   **Browser first, server last.** The app asks keyless public RPCs directly, with a 5-second timeout per endpoint, and moves on silently when one hangs or refuses. Only when they all fail does it call the app's own server routes.
+*   **Free RPCs before paid ones.** Server routes try free official endpoints first. Paid providers (Helius, Alchemy) have their keys only in the server environment and are used as a last resort.
+*   **No keys in the app.** The browser bundle contains no provider keys. The wallet signs every transaction itself.
+
 
 ### Swaps — Jupiter on Solana
 
-When DeSmond or a user executes a swap on Solana, the backend routes through **Jupiter** — the deepest liquidity aggregator on the SVM. Example interaction:
+Swaps run in the `effisend-tdc-swap-tokens` Lambda, not in the app. For a Solana swap the Lambda asks **Jupiter Ultra** for an order first. If Ultra refuses the route, it falls back to Jupiter's classic quote and swap, where the wallet pays its own network fee. The Lambda only partially signs the transaction, and the user's wallet signs the rest.
 
-> *"Swap 50 USDC for SOL"* → DeSmond resolves the route → Jupiter finds the best path → transaction signed server-side → confirmation returned in natural language.
+Example: *"Swap 50 USDC for SOL"* → DeSmond resolves the tokens → Jupiter builds the route → the wallet signs → the result comes back in natural language.
+
+---
+
+## Solana integration: how it works today
+
+This section describes the Solana code in the current Effisend TDC app (1.0.124). The source files are in [`solana/`](./solana), with the layout at the end of this section.
+
+### Payments: Solana Pay that any wallet can confirm
+
+DeSmond's payment QR is a Solana Pay *transaction request*. The wallet asks the server for an **unsigned** transfer that already carries a unique reference key, so the app can find the payment on-chain. The server holds no keys and cannot move funds.
+
+```mermaid
+sequenceDiagram
+    participant App as EffiSend (QR shown)
+    participant API as /api/solanaPay
+    participant W as Solana wallet
+    participant Chain as Solana RPC
+    App->>W: solana:<transaction request URL>?amount&spl-token&reference
+    W->>API: GET label / icon
+    W->>API: POST { account }
+    API-->>W: unsigned transfer (SOL or SPL, reference included)
+    W->>Chain: signed transaction
+    loop every ~30 s
+        App->>Chain: find transaction by reference
+        App->>API: /api/solanaPayStatus (fallback, full history)
+    end
+    App-->>App: paid (amount match within 2 min if no reference match)
+```
+
+The reference lookup is exact. The amount match is only a fallback for wallets that drop the reference.
+
+### Venue passes: Effi compressed NFTs
+
+Effi passes are **compressed NFTs** in the Effi collection. Compressed NFTs are only visible through the DAS API, which public browser RPCs refuse, so the app asks its own server:
+
+```mermaid
+flowchart LR
+    App[Passes tab] -->|owner address| Route[/api/effiSolana/]
+    Route --> Free[Official Solana RPC<br/>DAS searchAssets]
+    Route -.->|only if the free one fails| Paid[Helius DAS<br/>server env key]
+    Free --> Ids[Effi cNFT ids]
+    Paid --> Ids
+    Ids --> App
+```
+
+Standard NFTs in the wallet are listed differently: the browser reads the owner's token accounts and Metaplex metadata directly, and `/api/solanaNftMints` is used only when no browser RPC allows the scan.
+
+### Balances and sends
+
+*   **Balances** (SOL, USDC, USDT, BONK, BTC, JUP) come from the browser RPC race, with `/api/balances` as the server fallback. A failed read is shown as unknown, never as zero.
+*   **Sends** check the address format, keep a **0.001 SOL** reserve for network fees, and accept `solana:` wallet URIs, keeping only the recipient.
+
+### Cross-chain: USDC over Circle CCTP
+
+Solana is one of the Circle Bridge Kit (CCTP) chains. USDC moves to and from Base, Arbitrum, Monad and Arc by burn-and-mint, so no wrapped token is created. The bridge screen checks that the wallet holds enough SOL for the fees before it quotes a route.
+
+### Effi collection minting
+
+`effisend-nft-solana` creates the Effi collection as **compressed NFTs** (Metaplex Bubblegum V1) with a Token Metadata collection NFT. A depth-8 Merkle tree holds 256 leaves, and each pass costs one transaction fee instead of the rent of a regular NFT (~0.0074 SOL). The operator key is KMS-encrypted and never leaves the function.
+
+### Configuration
+
+Names only; values live in the hosting and Lambda environments, never in the repo:
+
+| Name | Used by | Purpose |
+|------|---------|---------|
+| `HELIUS_DAS_RPC_URL` | `/api/effiSolana`, server RPC fallback | Paid last-resort RPC and DAS lookup |
+| `ALCHEMY_API_KEY` | server RPC fallback, `nft-solana` Lambda | Paid last-resort RPC |
+| `JUPYTER_SWAP_API_KEY` | `swap-tokens` Lambda | Jupiter API key |
+| `SOLANA_RPC`, `SOLANA_SEND_RPC` | `nft-solana` Lambda | Official RPC endpoints |
+| `SOL_COLLECTION_MINT`, `SOL_MERKLE_TREE` | `nft-solana` Lambda | Effi collection and tree |
+
+### Layout of `solana/`
+
+```
+solana/
+  app/
+    classes/solanaChain.js                 balances, NFT listing, Metaplex metadata
+    core/solanaPayDetect.js                Solana Pay URL parsing and payment detection
+    components/SolanaPaymentWidget.js      the QR and live payment status
+    api/solanaPay+api.js                   builds the unsigned Solana Pay transfer
+    api/solanaPayStatus+api.js             server-side payment detection
+    api/solanaNftMints+api.js              fallback NFT listing
+    api/effiSolana+api.js                  Effi cNFT lookup (DAS)
+  lambdas/
+    swap-tokens/                           Jupiter Ultra and classic swaps
+    nft-solana/                            Effi collection and cNFT minting
+    effi-solana-read/                      public read-only Effi lookup (earlier direct path;
+                                           the app currently uses api/effiSolana)
+```
+
+These files are a reference copy. They import helpers from the full app, so they do not run on their own. The `.env` files, tests and dependencies are not included.
 
 ---
 
