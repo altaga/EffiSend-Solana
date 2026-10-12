@@ -11,6 +11,48 @@
 
 ---
 
+## Live: the Pudgy Penguins Pop-Up at Tokyo Dome City
+
+<img src="./Images/effisend-pudgy-logo.png" width="140" align="right" alt="Effisend × Pudgy Penguins" />
+
+From **September 24 to October 2, 2026**, EffiSend was the crypto payment app of the **Pudgy Penguins Pop-Up** at enXross DAO, Tokyo Dome City, run with Fracton and enXross. Real visitors bought real merchandise with stablecoins, and **Solana carried most of it**.
+
+<img src="./Images/pudgy-popup-tokyo-dome.jpg" style="width: 700px;" alt="Pudgy Penguins Pop-Up at Tokyo Dome City: the shop banner, the EffiSend payment stand and a customer paying" />
+
+### The results
+
+| | Whole pilot | On Solana |
+|---|---|---|
+| Payments | **24** | **13** (54%) |
+| Amount paid | **$678.43** | **$435.69** (64%) |
+| Largest payment | $110.02 | $110.02 (USDC) |
+| New users (face ID + PIN) | **26** | |
+| App visits | **225** | |
+| Effi NFTs given | **27** | 3 compressed NFTs |
+
+- **USDC on Solana was the top payment method:** 11 payments for $420.91, almost two thirds of everything sold. The other 2 Solana payments were in SOL.
+- **Opening day was the event:** 16 of the 24 payments and 21 of the 26 sign-ups happened on September 24. 14 of those 16 payments came in the evening, between 18:00 and 22:00.
+- **Every payment is public:** each one is a direct on-chain transfer into the shop's receive-only wallet. For example, the largest one: [110.02 USDC on Solscan](https://solscan.io/tx/3EpHsgSG7XRRkSKrnExQQb1LA34WEDzWhZgfdBdZ1cpy3BYAnjMQMV6BkdRyMzZxics15JZtXoSEgXru4qnbjZUR).
+
+The figures count only real customer payments: test transfers, dust, spam tokens, swaps and the team's own transfers are left out.
+
+### How visitors paid with Solana
+
+1. **Face ID.** The visitor opens EffiSend and scans their face. A new visitor gets a wallet on the spot and sets a PIN. No seed phrase, no extension, no app store download.
+2. **PIN and amount.** They confirm with their PIN and enter the price in USD.
+3. **On-chain in about 2 seconds.** The app sends the USDC straight to the shop's wallet. Each transaction goes to 3 Solana RPCs at once, and payments confirmed in about 2 seconds.
+
+Visitors who already had a Solana wallet paid with **[Solana Pay](#payments-solana-pay-that-any-wallet-can-confirm)** instead: they scanned the QR from their own wallet, and the app found the payment on-chain by its reference key. 9 of the Solana payments went through the face-ID flow and 4 through Solana Pay.
+
+### What the pilot proved, and what we improved
+
+- **Stablecoins work at a real counter.** Prices stay in dollars, there is no card network in the middle, and the shop receives the money directly.
+- **No single point of failure.** During the busiest afternoon, some Solana RPC connections failed or hit rate limits. The app switched to the next RPC automatically and the payments went through. Sending each transaction to several RPCs at once is now the default.
+- **Gas fees are the real friction.** A few visitors held USDC but not enough SOL for the network fee, so their payment stopped before it was sent and nothing was charged. Next step: sponsored, gasless payments, so a stablecoin balance is all a visitor needs.
+- **Next in Japan:** a crypto vending machine that takes the payment and dispenses the product on its own, plus new collaborations with partner brands and venues.
+
+---
+
 ## The Problem
 
 Crypto payments at high-traffic real-world venues are broken. You have tokens, no idea which account has enough balance, and no fast way to prove who you are without hardware wallets or browser extensions. The cashier is waiting. The queue is growing. The moment is gone.
