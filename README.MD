@@ -4,8 +4,8 @@
 
 > A mobile-first crypto wallet and AI concierge that lets anyone receive, swap, bridge, and spend digital assets across 5 blockchains — verified by face, secured by PIN, guided by an AI agent that speaks your language.
 
-**Platform:** Solana Seeker  
-**Channel:** Solana dApp Store  
+**Platform:** Web app: any phone or computer, no install (iOS, Android, desktop, Solana Seeker)  
+**Channel:** The web, at [effisend-tdc.expo.app](https://effisend-tdc.expo.app)  
 **Primary Network:** Solana  
 **Stack:** Expo 54 · React Native · `@solana/kit` · Metaplex · Jupiter API · Ethers.js
 
@@ -255,15 +255,16 @@ These files are a reference copy. They import helpers from the full app, so they
 
 ---
 
-## Solana Mobile & Distribution Hub
+## Distribution: the Web First
 
-EffiSend is optimized for the **Solana Seeker**, leveraging the world's most advanced web3 mobile hardware to bring agentic payments to the palm of your hand.
+EffiSend ships as a **web app**: [effisend-tdc.expo.app](https://effisend-tdc.expo.app). A visitor scans a QR code at the venue and is ready to pay in seconds, on whatever phone they already carry.
 
 <img src="./Images/s10.png" width=32% /> <img src="./Images/s11.png" width=32% /> <img src="./Images/s12.png" width=32% />
 
-*   **Solana dApp Store Distribution** — By launching on the Solana dApp Store, EffiSend bypasses traditional gatekeepers, reaching a global audience of crypto-native users with zero censorship and a web3-first experience.
-*   **Seeker-Native Integration** — Designed to feel at home on the Solana Seeker, ensuring that face-to-face payments and AI-guided operations are fluid, fast, and hardware-secured.
-*   **Mass Distribution Strategy** — Our presence in the Solana ecosystem acts as a multiplier, allowing EffiSend to scale across physical venues worldwide by tapping into the existing community of Solana mobile users.
+*   **No install, no store.** Nothing to download and no app-store review between us and the visitor. At a busy counter, the only step that matters is opening a link.
+*   **Every phone, one codebase.** The same Expo app runs on iOS, Android and desktop browsers, and still feels at home on the Solana Seeker.
+*   **Updates reach everyone at once.** A fix ships to every visitor the moment it is deployed, with no store approval and no outdated installs. That mattered during the live pilot, when we improved the app between event days.
+*   **Proven at Tokyo Dome City.** At the Pudgy Penguins Pop-Up, visitors opened EffiSend from their browser 225 times and 26 of them created a wallet on the spot. See [the pilot results](#live-the-pudgy-penguins-pop-up-at-tokyo-dome-city).
 
 ---
 
